@@ -3,15 +3,15 @@
 //When they view the browser console, they observe a table listing how many of each flavor they have ordered.
 //they will be able to observe that they have ordered three vanilla, two coffee, and one strawberry froyo.
 
-const userInput = prompt(
-    "Please enter a list of comma-separated froyo flavors."
-  );
 
-const listArray = userInput.split(",");
+//const listArray = userInput.split(",");
 
-function countList(listArray) {
+function countList(input) {
+    
+    const listArray = input.split(",");
+    console.log(listArray);
     const count = {};
-
+    
     for (let flavor of listArray) {
         if (count[flavor]) {
             count[flavor] += 1;
@@ -20,4 +20,8 @@ function countList(listArray) {
     return count;
 }
 
-console.log("Your order is: ", countOrders(orderArray));
+const userInput =prompt(
+    "Please enter a list of comma-separated froyo flavors."
+  );
+
+console.log("Your order is: ", countList(userInput));
